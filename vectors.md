@@ -15,9 +15,9 @@ Like any other language, R also provides with following data types:
 There are two types:
 + One is the direct assignment, may also be called as primitives
 
-```
+{% highlight R %}
 x = 34
-```
+{% endhighlight %}
 
 Such assignments always make numeric variable.
 To check variable type, just write
