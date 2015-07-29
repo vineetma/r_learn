@@ -1,3 +1,8 @@
+---
+layout: default
+overview: true
+title: Learning Vectors in R
+---
 #Data types in R-Language
 
 Like any other language, R also provides with following data types:
