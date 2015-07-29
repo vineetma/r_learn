@@ -10,6 +10,13 @@ Lets get started with some of the basic quantitative stats. These are frequency,
 Lets pick up some data available out of the box.
 
 {% highlight R %}
+length(z)
+[1] 6
+> 
+{% endhighlight %}
+
+
+{% highlight R %}
  > library(MASS)
  > painters
                 Composition Drawing Colour Expression School
