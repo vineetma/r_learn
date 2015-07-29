@@ -1,3 +1,9 @@
+---
+layout: default
+overview: true
+title: Learning Matrix in R
+---
+
 #Matrix
 Recall, school days, when we used to multiply vector and get confused between rows and columns. It has been an hit question during programming interviews as well. Here is the language that has this capability built in. It is about 2-dimensional organization of members. Kind of vector with added dimension.
 

@@ -1,3 +1,9 @@
+---
+layout: default
+overview: true
+title: Learning Statistics Basics in R
+---
+
 #Statistics - Basic
 Lets get started with some of the basic quantitative stats. These are frequency, cummulative frequency, mean, median, mode, standard deviation.
 

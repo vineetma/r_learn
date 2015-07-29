@@ -1,3 +1,9 @@
+---
+layout: default
+overview: true
+title: Learning Data Frames in R
+---
+
 #Data Frames - most frequented data in R
 This is where whatever we have learnt culminates. That is..
 + data types

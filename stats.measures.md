@@ -1,3 +1,9 @@
+---
+layout: default
+overview: true
+title: Learning Statistics - Measurements in R
+---
+
 #Data properties
 ##Mean
 ```

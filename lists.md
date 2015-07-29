@@ -1,3 +1,9 @@
+---
+layout: default
+overview: true
+title: Learning Lists in R
+---
+
 #Lists
 Lists are very much similar to associative arrays. It comes very close in similarity to a PHP programmer.
 
