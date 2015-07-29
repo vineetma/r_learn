@@ -28,15 +28,15 @@ Such assignments always make numeric variable.
 To check variable type, just write
 class(x)
 
-```
+{% highlight R %}
 x = as.integer(3.4)
-```
+{% endhighlight %}
 
 This will make 3.4 explicitly being treated as integer, therefore, .4 will be truncated
 
-```
+{% highlight R %}
 x = "Vineet Maheshwari"
-```
+{% endhighlight R %}
 
 Assigns character (or string in regular language)
 
@@ -52,11 +52,11 @@ class(y)
 
 + Another one is using the vector and making the variables it's components (or members in routine language). 'c' is the function call used, i understand, refers to "component", nevertheless, it is good to settle question on what "c" stands for.
 
-```
+{% highlight R %}
 x = c(23,TRUE, "Vineet")
 class(x)
 x
-```
+{% endhighlight %}
 
 
 Note in the output of above following:
@@ -71,7 +71,7 @@ b. x has coerced all components to "character"
 
 We can combine them just like we created vector.
 
-```R
+{% highlight R %}
 x = "Vineet"
 y = c("Maheshwari", ",", 5.6, ",Gurgaon")
 z = c(x, " ", y)
@@ -79,28 +79,27 @@ z
 [1] "Vineet"     " "          "Maheshwari" ","          "5.6"       
 [6] ",Gurgaon"
 > 
-```
+{% endhighlight %}
 
 You can measure the length of this vector to verify
 
-```R
+{% highlight R %}
 length(z)
 [1] 6
 > 
-```
+{% endhighlight %}
 
 Checkout coercion once again
 
-<pre>
-```R
+{% highlight R %}
 > a = c(1,2,3)
 > a
 [1] 1 2 3
 > b = c(a, "Vineet")
 > b
 [1] "1"      "2"      "3"      "Vineet"
-```
-</pre>
+{% endhighlight %}
+
 Note here the way integer array is converted to array of strings. This means, R wants all members to be of same type
 
 ##Doing some maths
@@ -108,7 +107,9 @@ Same symbols ``+``, ``-``, ``*``, ``/`` are used to perform maths. However, if w
 + if it is single item, than it is operated upon all the members/components
 + if it is again a vector than it adds index by index
 + if it is unequal in size, than the elements from smaller one are reused
-```
+ 
+
+{% highlight R %}
 > a = c(1,2,3)
 > a
 [1] 1 2 3
@@ -130,31 +131,32 @@ Same symbols ``+``, ``-``, ``*``, ``/`` are used to perform maths. However, if w
 Warning message:
 In b + c : longer object length is not a multiple of shorter object length
 > 
-```
+{% endhighlight %}
 
 Note 12 is added again to 10. This is also known as recycling.
 
 ##Accessing the members
 Like arrays in C, one can do the same here. Also, it has adopted the convenience displayed in other languages like PHP, Python
 
-```
+{% highlight R %}
 > b
 [1]  3  3 10
 > b[3]
 > 10
 > 
-```
+{% endhighlight %}
 
 Note that 0 is special index. It contains the type of the vector, in this case it is numeric.
 
 Use can access members with pair of integer indexes separated by ``:``
-```
+
+{% highlight R %}
 > a
 [1] 1 2 3
 > a[2:3]
 [1] 2 3
 > 
-```
+{% endhighlight %}
 
 ###New ways
 ####Use Negative Index
@@ -168,31 +170,34 @@ Note: 2nd component removed.
 
 ####Use list of indexes
 Another one, instead of integer index, give another vector, with list of integer indexes. These index values can repeat. R shall return whatever is rquested from here.
-```
+
+{% highlight R %}
 > s = c("Ram", "Venkat", "Shree")
 > s[c(1,1,1)]
 [1] "Ram" "Ram" "Ram"
-```
+{% endhighlight %}
 
 ####Use list of logical values
 It is like a switch, placed on top of all members in given vector. If it is "True", i.e. "On", it will show up in final outcome, else not.
-```
+{% highlight R %}
 > a
 [1] 1 2 3
 > a[c(TRUE,FALSE,FALSE)]
 [1] 1
 >
-```
+{% endhighlight %}
 
 ####Labelling vector members
 Use ``names()`` function to create another array of labels for the given vector. Usage is as:
-```
+
+{% highlight R %}
 > person1 = c("Vineet", "Maheshwari", 5.5, "Gurgaon")
 > names(person1) = c("First Name", "Last Name", "Height", "City")
 > person1
   First Name    Last Name       Height         City 
     "Vineet" "Maheshwari"        "5.5"    "Gurgaon" 
 > 
-```
+{% endhighlight %}
+
 Note here, the function being used is on the LHS, with argument as the target vector.
 
