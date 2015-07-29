@@ -70,7 +70,7 @@ b. x has coerced all components to "character"
 
 We can combine them just like we created vector.
 
-```
+```R
 x = "Vineet"
 y = c("Maheshwari", ",", 5.6, ",Gurgaon")
 z = c(x, " ", y)
@@ -82,14 +82,16 @@ z
 ```
 
 You can measure the length of this vector to verify
-```
+
+```R
 length(z)
 [1] 6
 > 
 ```
 
 Checkout coercion once again
-```
+
+```R
 > a = c(1,2,3)
 > a
 [1] 1 2 3
