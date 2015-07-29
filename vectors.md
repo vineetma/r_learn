@@ -37,6 +37,31 @@ Assigns character (or string in regular language)
 
 One can coerce a variable into other type, typically required between integers and float. It can be done by:
 
+{% highlight objc %}
+- (void)viewDidLoad {
+	[super viewDidLoad];
+
+	UIPinchGestureRecognizer *pinchRecognizer = [[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(scale:)] autorelease];
+	[pinchRecognizer setDelegate:self];
+	[self.view addGestureRecognizer:pinchRecognizer];
+
+	UIRotationGestureRecognizer *rotationRecognizer = [[[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotate:)] autorelease];
+	[rotationRecognizer setDelegate:self];
+	[self.view addGestureRecognizer:rotationRecognizer];
+
+	UIPanGestureRecognizer *panRecognizer = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)] autorelease];
+	[panRecognizer setMinimumNumberOfTouches:1];
+	[panRecognizer setMaximumNumberOfTouches:1];
+	[panRecognizer setDelegate:self];
+	[canvas addGestureRecognizer:panRecognizer];
+
+	UITapGestureRecognizer *tapProfileImageRecognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)] autorelease];
+	[tapProfileImageRecognizer setNumberOfTapsRequired:1];
+	[tapProfileImageRecognizer setDelegate:self];
+	[canvas addGestureRecognizer:tapProfileImageRecognizer];
+}
+{% endhighlight %}
+
 {% highlight R %}
 x = 4
 y = as.integer(x)
