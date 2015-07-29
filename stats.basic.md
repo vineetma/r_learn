@@ -24,6 +24,7 @@ Fr. Penni                 0      15      8          0      A
 
 ##Frequency Distribution
 Lets find out categories in School column
+
 {% highlight R %}
 > levels(painters$School)
 [1] "A" "B" "C" "D" "E" "F" "G" "H"
