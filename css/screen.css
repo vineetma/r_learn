@@ -157,7 +157,7 @@ ul.posts a {
 
   /* standard */
 
-#post pre {
+#post pre, pre {
 	border: 1px solid #ddd;
 	background-color: #eef;
 	padding: 0 .4em;
@@ -174,14 +174,14 @@ ul.posts a {
 	margin-left: 1.35em;
 }
 
-#post code {
+#post code, code {
 	border: 1px solid #ddd;
 	background-color: #eef;
 	font-size: 85%;
 	padding: 0 .2em;
 }
 
-#post pre code {
+#post pre code, pre code {
 	border: none;
 }
 
