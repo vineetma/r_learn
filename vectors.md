@@ -75,6 +75,9 @@ x = "Vineet"
 y = c("Maheshwari", ",", 5.6, ",Gurgaon")
 z = c(x, " ", y)
 z
+[1] "Vineet"     " "          "Maheshwari" ","          "5.6"       
+[6] ",Gurgaon"
+> 
 ```
 
 You can measure the length of this vector to verify
