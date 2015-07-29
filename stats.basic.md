@@ -48,3 +48,43 @@ To find occurence of all levels
 > 
 {% endhighlight %}
 
+``table`` command summarizes the levels within data.
+
+##Relative Frequency
+How much as a percentage a particular level occurs amongst all data points.
+
+{% highlight R %}
+> table(painters$School) / length(painters$School)
+
+         A          B          C          D          E          F          G 
+0.18518519 0.11111111 0.11111111 0.18518519 0.12962963 0.07407407 0.12962963 
+         H 
+0.07407407 
+> 
+{% endhighlight %}
+
+To limit the digits in result, we can
+
+{% highlight R %}
+> options(digits=2)
+> table(painters$School) / length(painters$School)
+
+    A     B     C     D     E     F     G     H 
+0.185 0.111 0.111 0.185 0.130 0.074 0.130 0.074 
+> 
+{% endhighlight %}
+
+##Bar Graph
+We can plot the above frequency table.
+
+{% highlight R %}
+> barplot(table(painters$School))
+> #adding colors
+> barplot(table(painters$School), col=c("red", "yellow"))
+{% endhighlight %}
+
+Both the graphs are given below side by side.
+
+![bar graph](images/barplot_1.jpg)
+![bar graph](images/barplot_2.jpg)
+
