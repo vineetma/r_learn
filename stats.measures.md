@@ -6,7 +6,8 @@ title: Learning Statistics - Measurements in R
 
 #Data properties
 ##Mean
-```
+
+```R
 > mean(faithful$eruptions)
 [1] 3.5
 ```
