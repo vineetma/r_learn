@@ -37,12 +37,12 @@ Assigns character (or string in regular language)
 
 One can coerce a variable into other type, typically required between integers and float. It can be done by:
 
-```
+{% highlight R %}
 x = 4
 y = as.integer(x)
 class(x)
 class(y)
-```
+{% endhighlight %}
 
 + Another one is using the vector and making the variables it's components (or members in routine language). 'c' is the function call used, i understand, refers to "component", nevertheless, it is good to settle question on what "c" stands for.
 
