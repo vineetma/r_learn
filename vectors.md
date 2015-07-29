@@ -99,7 +99,7 @@ Checkout coercion once again
 ```
 Note here the way integer array is converted to array of strings. This means, R wants all members to be of same type
 
-## Doing some maths
+##Doing some maths
 Same symbols ``+``, ``-``, ``*``, ``/`` are used to perform maths. However, if we operate to a vector, it follows following rules:
 + if it is single item, than it is operated upon all the members/components
 + if it is again a vector than it adds index by index
@@ -151,8 +151,9 @@ Use can access members with pair of integer indexes separated by ``:``
 [1] 2 3
 > 
 ```
+
 ###New ways
-#### Use Negative Index
+####Use Negative Index
 here is use of -ve index. It removes that indexed member which is stated like this.
 ```
 > b[-2]
@@ -161,7 +162,7 @@ here is use of -ve index. It removes that indexed member which is stated like th
 ```
 Note: 2nd component removed.
 
-#### Use list of indexes
+####Use list of indexes
 Another one, instead of integer index, give another vector, with list of integer indexes. These index values can repeat. R shall return whatever is rquested from here.
 ```
 > s = c("Ram", "Venkat", "Shree")
@@ -169,7 +170,7 @@ Another one, instead of integer index, give another vector, with list of integer
 [1] "Ram" "Ram" "Ram"
 ```
 
-#### Use list of logical values
+####Use list of logical values
 It is like a switch, placed on top of all members in given vector. If it is "True", i.e. "On", it will show up in final outcome, else not.
 ```
 > a
@@ -179,7 +180,7 @@ It is like a switch, placed on top of all members in given vector. If it is "Tru
 >
 ```
 
-#### Labelling vector members
+####Labelling vector members
 Use ``names()`` function to create another array of labels for the given vector. Usage is as:
 ```
 > person1 = c("Vineet", "Maheshwari", 5.5, "Gurgaon")
