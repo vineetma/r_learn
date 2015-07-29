@@ -65,8 +65,11 @@ a. class outputs again type as "character"
 b. x has coerced all components to "character"
 
 #Playing with vectors
+
 ## Combining them
+
 We can combine them just like we created vector.
+
 ```
 x = "Vineet"
 y = c("Maheshwari", ",", 5.6, ",Gurgaon")
