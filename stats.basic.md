@@ -88,3 +88,106 @@ Both the graphs are given below side by side.
 ![bar graph](images/barplot_1.jpg)
 ![bar graph](images/barplot_2.jpg)
 
+##Pie Chart
+Similarly we can plot pie chart using ``pie()`` function
+
+{% highlight R %}
+> pie(table(painters$School), col=c("red", "blue"))
+{% endhighlight %}
+
+![pie chart](images/pie_1.jpg)
+
+##Finding mean of every level (use of: tapply)
+**``tapply``** can be used to apply different stats function data corresponding to every level. It is a worker provided for every category.
+
+{% highlight R %}
+> tapply(painters$Composition, painters$School, mean)
+   A    B    C    D    E    F    G    H 
+10.4 12.2 13.2  9.1 13.6  7.2 13.9 14.0 
+> barplot(tapply(painters$Composition, painters$School, mean), col=c("red", "yellow"))
+> 
+{% endhighlight %}
+
+![bar plot](images/barplot_3.jpg)
+
+##Working with continous data
+In above example, what we got as mean is an example of such information. Variable does not take any discrete values. Here variable is the mean and not the "Composition". For such types, how to calculate frequency distribution.
+
+Lets use data frame ``faithful`` here
+
+{% highlight R %}
+> faithful
+> head(faithful)
+  eruptions waiting
+1       3.6      79
+2       1.8      54
+3       3.3      74
+4       2.3      62
+{% endhighlight %}
+
+Here both eruptions and waiting may be classified as continous data.
+
+To find range in which the variable varies, use function **``range()``**
+
+{% highlight R %}
+> range(faithful$eruptions)
+[1] 1.6 5.1
+> range(faithful$waiting)
+[1] 43 96
+> 
+{% endhighlight %}
+
+Lets create an vector with equi-distant points between the range retrieved in previous example
+
+{% highlight R %}
+> breaks = seq(range(faithful$eruptions)[1]-0.5, range(faithful$eruptions)[2]+.5, by=0.5)
+> breaks
+ [1] 1.1 1.6 2.1 2.6 3.1 3.6 4.1 4.6 5.1 5.6
+> 
+{% endhighlight %}
+
+One can create variable to store ``range(faithful$eruptions)[1]`` and that of upper limit, then reuse it (more readable).
+
+Now, lets use this category sequence (vector), to split data range for eruptions, using **``cut()``**
+
+{% highlight R %}
+> eruptions.cat = cut(faithful$eruptions, breaks, right=FALSE)
+> eruptions.cat
+  [1] [3.6,4.1) [1.6,2.1) [3.1,3.6) [2.1,2.6) [4.1,4.6) [2.6,3.1) [4.6,5.1)
+  [8] [3.6,4.1) [1.6,2.1) [4.1,4.6) [1.6,2.1) [3.6,4.1) [4.1,4.6) [1.6,2.1)
+ [15] [4.6,5.1) [2.1,2.6) [1.6,2.1) [4.6,5.1) [1.6,2.1) [4.1,4.6) [1.6,2.1)
+  ...
+  ..
+9 Levels: [1.1,1.6) [1.6,2.1) [2.1,2.6) [2.6,3.1) [3.1,3.6) ... [5.1,5.6)
+> 
+{% endhighlight %}
+
+Now, every data point belongs to at least one of the 7 levels (category). Using the tapply, we can calculate the mean
+{% highlight R %}
+> tapply(faithful$eruptions, eruptions.cat, mean)
+[1.1,1.6) [1.6,2.1) [2.1,2.6) [2.6,3.1) [3.1,3.6) [3.6,4.1) [4.1,4.6) [4.6,5.1) 
+       NA       1.9       2.3       2.8       3.4       3.9       4.4       4.8 
+[5.1,5.6) 
+      5.1 
+{% endhighlight  %}
+
+To calculate freq??
+
+{% highlight R %}
+> cbind(table(eruptions.cat))
+          [,1]
+[1.1,1.6)    0
+[1.6,2.1)   63
+[2.1,2.6)   29
+[2.6,3.1)    6
+[3.1,3.6)   10
+[3.6,4.1)   42
+[4.1,4.6)   79
+[4.6,5.1)   42
+[5.1,5.6)    1
+# we used here cbind to combine empty table with column representation of the output
+> barplot(table(eruptions.cat), xlab="Duration minutes", ylab="Frequency", main="Faithful Eruptions")
+# note here we remove cbind here, otherwise it would have created horizontal bars
+# also note here additional arguments given to decorate chart
+{% endhighlight %}
+
