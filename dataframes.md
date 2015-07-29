@@ -14,7 +14,8 @@ This is where whatever we have learnt culminates. That is..
 A data frame is collection of vectors of equal length. Lets see how it gets defined. It's type is different than ``list``. We have to use ``data.frame()`` to define a variable.
 
 Example:
-```
+
+{% highlight R %}
 > cdg = c(23.5, 12,2,40,45)
 > ndls = c(12,20,0, 35, 20)
 > rainfall = data.frame(cdg, ndls)
@@ -45,10 +46,11 @@ Mar  2.0    0
 Apr 40.0   35
 May 45.0   20
 # checkout every row has got a label
-```
+{% endhighlight %}
 
 Further, like in list, one can assign values as:
-```
+
+{% highlight R %}
 > country = data.frame(states=c("Andhra Pradesh", "Uttar Pradesh", "Punjab"), capital=c("Hyderabad", "Lucknow", "Chandigarh"))
 > country
           states    capital
@@ -56,7 +58,7 @@ Further, like in list, one can assign values as:
 2  Uttar Pradesh    Lucknow
 3         Punjab Chandigarh
 > # here we see column names/labels are used like an associative array
-```
+{% endhighlight  %}
 
 ## Helpers for data.frame
 + nrow() - returns number of rows
@@ -66,7 +68,8 @@ Further, like in list, one can assign values as:
 
 ## Accessing its members
 It is same way as we do it for lists. That is use of ``[[]]``.
-```
+
+{% highlight R %}
 > rainfall[[2]]
 [1] 12 20  0 35 20
 > rainfall[["ndls"]]
@@ -96,10 +99,11 @@ Feb 12.0   20
 Feb  12   20
 May  45   20
 > 
-```
+{% endhighlight %}
 
 Lets learn a simple trick here:
-```
+
+{% highlight R %}
 > rainfall$cdg
 [1] 23.5 12.0  2.0 40.0 45.0
 > rainy = rainfall$cdg > 10
@@ -113,7 +117,7 @@ Apr 40.0   35
 May 45.0   20
 > typeof(rainy)
 > [1] "logical"
-```
+{% endhighlight  %}
 
 We used logical operation here applied over all members of a vector.
 
@@ -130,8 +134,9 @@ Format, Package/Library, Function used
 + CSV: ; read.csv
 
 Set up the current working directory to different location where the data files are lying:
-```
+
+{% highlight R %}
 setcwd("/home/vineet/R/data")
 getwd()
 [1] "/home/vineet/R/data"
-```
+{% endhighlight %}
