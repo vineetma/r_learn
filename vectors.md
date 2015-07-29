@@ -90,6 +90,7 @@ length(z)
 
 Checkout coercion once again
 
+<pre>
 ```R
 > a = c(1,2,3)
 > a
@@ -98,6 +99,7 @@ Checkout coercion once again
 > b
 [1] "1"      "2"      "3"      "Vineet"
 ```
+</pre>
 Note here the way integer array is converted to array of strings. This means, R wants all members to be of same type
 
 ##Doing some maths
